@@ -1,0 +1,160 @@
+/* ===== LLM-GENERATED PAGE BLOCKS =====
+   Added after mass generation from Wordstat clusters.
+   These classes are NOT in the existing site style.css —
+   the LLM generator produces them in its HTML template.
+   Apply this CSS whenever 10+ new pages are generated.
+
+   Last applied: 2026-07-20 — 28 new AI service pages for axelfreeman.ru */
+
+/* Metrics grid (Цифры) */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 30px 0;
+}
+.metric {
+  background: var(--card);
+  padding: 24px 20px;
+  border-radius: var(--radius);
+  text-align: center;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+.metric-number {
+  display: block;
+  font-family: var(--serif);
+  font-size: 220%;
+  font-weight: 400;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+.metric-desc {
+  display: block;
+  font-family: var(--sans);
+  font-size: 80%;
+  color: var(--sub);
+}
+
+/* Case card metric */
+.case-metric {
+  font-family: var(--serif);
+  font-size: 150%;
+  font-weight: 400;
+  color: var(--accent);
+  margin: 8px 0 4px;
+}
+
+/* Trust block */
+.trust-block {
+  background: var(--card);
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  padding: 32px;
+  margin: 30px 0;
+}
+.trust-label {
+  font-family: var(--sans);
+  font-size: 75%;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+.trust-badges {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.trust-badge {
+  background: rgba(37,99,235,0.05);
+  border: 1px solid rgba(37,99,235,0.15);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-family: var(--sans);
+  font-size: 85%;
+  color: var(--body);
+}
+
+/* TL;DR block */
+.tldr-block {
+  background: var(--card);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 20px 28px;
+  margin: 20px 0;
+  font-size: 100%;
+  color: var(--body);
+  line-height: 1.7;
+}
+
+/* Price block */
+.price-block {
+  background: var(--navy);
+  color: var(--white);
+  padding: 48px 32px;
+  border-radius: 12px;
+  text-align: center;
+  margin: 40px 0;
+}
+.price-block h2 { color: var(--white); border: none; font-size: 180%; }
+
+/* Footers */
+.site-footer {
+  background: var(--navy);
+  color: var(--sub);
+  padding: 24px 20px;
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 80%;
+}
+.site-footer a { color: var(--accent); }
+.freeman-footer {
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+  padding: 40px 0;
+}
+.freeman-footer h2 { color: var(--text); border-color: var(--border); }
+
+/* Process step grid fix — 3 children in 2-column grid */
+.process-step {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 0 24px;
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 36px 40px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+}
+.process-step > .step-num {
+  grid-column: 1;
+  grid-row: 1 / auto;
+}
+.process-step > h3,
+.process-step > p {
+  grid-column: 2;
+  margin: 0;
+}
+.process-step h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 130%;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.process-step p {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 105%;
+  color: var(--body);
+  line-height: 1.7;
+}
+
+/* Mobile overrides */
+@media (max-width: 768px) {
+  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+  .trust-badges { flex-direction: column; }
+}

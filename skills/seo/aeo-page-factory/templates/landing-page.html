@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{TITLE}}</title>
+    <meta name="description" content="{{DESCRIPTION}}">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='28' font-size='28'>{{ICON}}</text></svg>">
+    <style>
+        * { font-family: "Figtree", system-ui, sans-serif; margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #0a0a1a; color: #fff; display: flex; flex-direction: column; min-height: 100vh; }
+        main { flex: 1; }
+        .header-banner { background: linear-gradient(90deg, {{ACCENT}}, {{ACCENT}}99); color: #fff; display: flex; align-items: center; justify-content: center; gap: 20px; padding: 12px 20px; text-decoration: none; font-size: 14px; font-weight: 600; }
+        .header-banner .btn { background: #fff; color: {{ACCENT}}; padding: 8px 20px; border-radius: 20px; font-weight: 700; }
+        header { background: #000; height: 60px; position: sticky; top: 0; z-index: 100; }
+        .header-wrapper { max-width: 1110px; height: 100%; margin: auto; display: flex; align-items: center; justify-content: space-between; padding: 0 20px; }
+        header .logo { font-size: 20px; font-weight: 700; text-decoration: none; color: #fff; }
+        .under-header { padding: 80px 20px; text-align: center; background: linear-gradient(135deg, #0a0a1a, {{ACCENT}}20); }
+        .under-header h1 { font-size: 48px; max-width: 900px; margin: 0 auto 20px; line-height: 1.2; }
+        .under-header .date { color: {{ACCENT}}; font-size: 14px; margin-bottom: 10px; }
+        .under-header p { max-width: 700px; margin: 0 auto 30px; font-size: 16px; color: #ccc; line-height: 1.6; }
+        .under-header .btn { background: {{ACCENT}}; color: #fff; text-decoration: none; padding: 12px 40px; border-radius: 30px; font-weight: 700; font-size: 16px; display: inline-block; }
+        .container { max-width: 1110px; margin: auto; padding: 0 20px; }
+        .service-card { display: block; background: #1a1a2e; border: 1px solid {{ACCENT}}33; border-radius: 16px; padding: 30px; margin: 30px 0; text-decoration: none; color: #fff; transition: 0.3s; }
+        .service-card:hover { border-color: {{ACCENT}}; }
+        .service-body .logo { font-size: 28px; font-weight: 900; margin-bottom: 16px; color: {{ACCENT}}; }
+        .service-body ul { list-style: none; margin-bottom: 20px; }
+        .service-body ul li { padding: 6px 0; color: #ccc; font-size: 14px; }
+        .service-body ul li::before { content: "✓ "; color: {{ACCENT}}; font-weight: bold; }
+        .rating { display: flex; align-items: center; gap: 16px; }
+        .rating .num { font-size: 36px; font-weight: 900; color: {{ACCENT}}; }
+        .stars { display: flex; gap: 3px; }
+        .star { width: 16px; height: 16px; background: #db8c0a; clip-path: polygon(50% 0%, 63% 38%, 100% 38%, 73% 62%, 82% 100%, 50% 75%, 18% 100%, 27% 62%, 0% 38%, 37% 38%); }
+        .service-body .btn { background: {{ACCENT}}; color: #fff; padding: 10px 30px; border-radius: 25px; display: inline-block; margin-top: 16px; font-weight: 700; }
+        article { padding: 40px 0; }
+        article h2 { font-size: 32px; margin: 40px 0 16px; color: #fff; }
+        article h3 { font-size: 24px; margin: 30px 0 12px; color: {{ACCENT}}; }
+        article h4 { font-size: 18px; margin: 20px 0 8px; color: #ddd; }
+        article p { font-size: 16px; line-height: 1.7; color: #ccc; margin-bottom: 16px; }
+        .faq { background: #000; padding: 60px 20px; }
+        .faq h2 { font-size: 32px; text-align: center; margin-bottom: 30px; }
+        .accordion { max-width: 800px; margin: auto; }
+        .accordion-item { margin-top: 12px; }
+        .accordion-header { display: flex; align-items: center; justify-content: space-between; background: #1a1a2e; padding: 18px 20px; border-radius: 8px; cursor: pointer; font-size: 18px; font-weight: 600; }
+        .accordion-header .icon { position: relative; width: 24px; height: 24px; }
+        .accordion-header .icon span { position: absolute; background: #fff; border-radius: 3px; transition: 0.3s; }
+        .accordion-header .icon span:nth-child(1) { width: 16px; height: 2px; top: 11px; left: 4px; }
+        .accordion-header .icon span:nth-child(2) { width: 2px; height: 16px; top: 4px; left: 11px; }
+        .accordion-item.active .icon span:nth-child(2) { opacity: 0; transform: scale(0); }
+        .accordion-body { padding: 0 20px; max-height: 0; overflow: hidden; transition: 0.4s; font-size: 16px; line-height: 1.6; color: #ccc; }
+        .accordion-item.active .accordion-body { padding: 16px 20px; max-height: 300px; }
+        .footer-banner { background: linear-gradient(90deg, {{ACCENT}}, {{ACCENT}}99); text-align: center; padding: 30px 20px; }
+        .footer-banner p { font-size: 24px; font-weight: 700; margin-bottom: 16px; }
+        .footer-banner .btn { background: #fff; color: {{ACCENT}}; padding: 12px 40px; border-radius: 30px; text-decoration: none; font-weight: 700; display: inline-block; }
+        footer { background: #171c2b; padding: 40px 20px; text-align: center; }
+        footer a { color: #ccc; text-decoration: none; margin: 0 12px; font-size: 14px; }
+        footer .copyright { color: #666; font-size: 12px; margin-top: 20px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        @media (max-width: 768px) { .under-header h1 { font-size: 28px; } article h2 { font-size: 24px; } }
+    </style>
+    {{METRIKA_SCRIPT}}
+</head>
+<body>
+<a href="{{CTA_URL}}" target="_blank" class="header-banner">
+    <div class="logo">{{BRAND}}</div>
+    <p>{{BANNER_TEXT}}</p>
+    <div class="btn">{{BANNER_BTN}}</div>
+</a>
+<header>
+    <div class="header-wrapper">
+        <a href="/" class="logo">{{BRAND}}</a>
+    </div>
+</header>
+<main>
+    <section class="under-header">
+        <div class="date">{{DATE}}</div>
+        <h1>{{H1}}</h1>
+        <p>{{SUBTITLE}}</p>
+        <a href="{{CTA_URL}}" class="btn">{{CTA_TEXT}}</a>
+    </section>
+    <div class="container">
+        {{RATING_CARD}}
+        <article>
+            {{CONTENT_SECTIONS}}
+            {{BRAND_SECTIONS}}
+        </article>
+    </div>
+    <section class="faq"><h2>Часто спрашивают</h2><div class="accordion">{{FAQ_ITEMS}}</div></section>
+    <div class="footer-banner"><p>{{FOOTER_BANNER_TEXT}}</p><a href="{{CTA_URL}}" class="btn">{{CTA_TEXT}}</a></div>
+</main>
+<footer>
+    <a href="{{MAIN_URL}}">Основной сайт</a>
+    <div class="copyright">{{COPYRIGHT}}</div>
+</footer>
+<script>
+document.querySelectorAll('.accordion-header').forEach(h => {
+    h.addEventListener('click', () => {
+        const item = h.parentElement;
+        const active = item.classList.contains('active');
+        document.querySelectorAll('.accordion-item').forEach(el => el.classList.remove('active'));
+        if (!active) item.classList.add('active');
+    });
+});
+</script>
+</body>
+</html>

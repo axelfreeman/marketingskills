@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{QUESTION}} | {{SITE_NAME}}</title>
+    <meta name="description" content="{{ANSWER_SHORT}}">
+    <link rel="canonical" href="{{CANONICAL_URL}}">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "{{Q1}}", "acceptedAnswer": {"@type": "Answer", "text": "{{A1}}"}},
+        {"@type": "Question", "name": "{{Q2}}", "acceptedAnswer": {"@type": "Answer", "text": "{{A2}}"}},
+        {"@type": "Question", "name": "{{Q3}}", "acceptedAnswer": {"@type": "Answer", "text": "{{A3}}"}}
+      ]
+    }
+    </script>
+    <link rel="stylesheet" href="/style.css?v={{CACHE_VERSION}}">
+</head>
+<body>
+<nav class="nav"><div class="nav-inner"><a href="/" class="nav-logo">{{SITE_NAME}}</a><div class="nav-links"><a href="/">Услуги</a><a href="/cases/">Кейсы</a><a href="/qa/">Q&A</a><a href="/blog/">Блог</a></div></div></nav>
+
+<article class="container" style="max-width:800px;margin:0 auto;padding:60px 24px">
+    <h1>{{H1}}</h1>
+    
+    <!-- TL;DR — прямой ответ -->
+    <div class="tldr" style="background:var(--card);padding:24px;border-radius:12px;margin-bottom:30px;border-left:3px solid var(--link)">
+        <p style="font-size:115%;color:var(--text);margin:0"><strong>Короткий ответ:</strong> {{ANSWER_SHORT}}</p>
+    </div>
+    
+    <!-- Extended content -->
+    {{EXTENDED_PARAS}}
+    
+    <!-- CTA -->
+    <div class="case-result" style="margin:40px 0;text-align:center">
+        <p style="font-size:110%">{{CTA_TEXT}}</p>
+        <a href="{{CTA_URL}}" class="cta-button" style="margin-top:16px">{{CTA_BUTTON}} →</a>
+    </div>
+</article>
+
+<footer class="site-footer"><p>© 2026 {{SITE_NAME}}.</p></footer>
+</body>
+</html>
