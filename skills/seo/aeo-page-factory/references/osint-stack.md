@@ -6,7 +6,6 @@
 
 | Инструмент | Команда | Для чего | Статус |
 |-----------|---------|----------|:------:|
-| **Sherlock** | `sherlock <username> --print-found` | Поиск по 300+ соцсетям | ✅ pip |
 | **holehe** | `holehe <email> --only-used` | Проверка email на 120+ сервисах | ✅ pip |
 | **h8mail** | `h8mail -t <email>` | Поиск в утечках (нужны API) | ✅ pip |
 | **theHarvester** | `docker run theharvester -d <domain>` | OSINT по домену | ✅ Docker |
@@ -50,13 +49,11 @@ info@, hello@, support@, contact@, admin@, team@ — проверять чере
 
 1. **python-email-validator** — format → DNS → MX → SMTP
 2. **holehe** — зарегистрирован ли email на сервисах
-3. **Sherlock** — найти username из email в соцсетях
-4. **SMTP ручная** — самый надёжный способ
+3. **SMTP ручная** — самый надёжный способ
 
 ## Результаты (NSFW-проект, июль 2026)
 - 174 домена → 110 email найдено (63%)
 - SMTP-подтверждённых: 82
-- 14/14 username'ов найдены в соцсетях через Sherlock
 - 164/174 домена с Twitter/X аккаунтами
 
 ## Скрипты Hermes
