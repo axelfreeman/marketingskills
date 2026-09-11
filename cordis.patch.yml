@@ -1,0 +1,4 @@
+# dsh bundle layer — registers the marketing-skills pack (50 skills).
+- insert:
+    - id: marketing-skills
+      name: dsh-marketing-skills

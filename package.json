@@ -1,0 +1,16 @@
+{
+  "name": "dsh-marketing-skills",
+  "version": "2.10.0",
+  "description": "50 marketing skills for AI agents — cold email, copywriting, pricing, CRO, SEO, ads, launch, and more. A dsh bundle of the Agent Skills specification collection.",
+  "type": "module",
+  "main": "index.js",
+  "files": ["index.js", "cordis.patch.yml", "skills/"],
+  "keywords": ["dsh-plugin", "deepseek-harness", "marketing", "agent-skills", "copywriting", "cro", "seo", "cold-email"],
+  "license": "MIT",
+  "author": "Corey Haines (marketingskills)",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
